@@ -1,4 +1,3 @@
-
 # react-native-status-bar
 
 ## Getting started
@@ -42,4 +41,3 @@ import RNCStatusBar from 'react-native-status-bar';
 // TODO: What to do with the module?
 RNCStatusBar;
 ```
-  
