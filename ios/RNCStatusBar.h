@@ -19,6 +19,6 @@
 
 @end
 
-@interface RCTStatusBarManager : RCTEventEmitter
+@interface RNCStatusBarManager : RCTEventEmitter
 
 @end

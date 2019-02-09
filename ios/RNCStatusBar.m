@@ -5,11 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import "RCTStatusBarManager.h"
+#import "RNCStatusBar.h"
 
-#import "RCTEventDispatcher.h"
-#import "RCTLog.h"
-#import "RCTUtils.h"
+#import <React/RCTEventDispatcher.h>
+#import <React/RCTLog.h>
+#import <React/RCTUtils.h>
+
 
 #if !TARGET_OS_TV
 @implementation RCTConvert (UIStatusBar)
@@ -29,7 +30,7 @@ RCT_ENUM_CONVERTER(UIStatusBarAnimation, (@{
 @end
 #endif
 
-@implementation RCTStatusBarManager
+@implementation RNCStatusBarManager
 
 static BOOL RCTViewControllerBasedStatusBarAppearance()
 {

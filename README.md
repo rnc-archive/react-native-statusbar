@@ -2,11 +2,11 @@
 
 ## Getting started
 
-`$ npm install react-native-status-bar --save`
+`$ npm install @react-native-community/status-bar --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-status-bar`
+`$ react-native link @react-native-community/status-bar`
 
 ### Manual installation
 
