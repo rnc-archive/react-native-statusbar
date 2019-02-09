@@ -4,13 +4,15 @@
   "description": "",
   "main": "./js/StatusBar.js",
   "scripts": {
+    "test:flow": "flow",
+    "test:js": "echo 'No test specified'; exit 0;",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": "Dmitriy Kovalenko <dmtr.kovalenko@outlook.com>",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.41.2"
   },
