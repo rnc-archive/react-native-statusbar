@@ -1,5 +1,5 @@
 
-package com.reactnativecommunity.status-bar;
+package com.reactnativecommunity.statusbar;
 
 import java.util.Arrays;
 import java.util.Collections;

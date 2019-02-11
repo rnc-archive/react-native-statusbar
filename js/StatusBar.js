@@ -16,7 +16,7 @@ const Platform = require('Platform');
 const processColor = require('processColor');
 
 const StatusBarManager = require('NativeModules').RNCStatusBarManager;
-
+console.log(require('NativeModules'))
 /**
  * Status bar style
  */

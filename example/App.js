@@ -12,6 +12,7 @@ import { Platform, StyleSheet, Text, View, TouchableHighlight } from "react-nati
 import StatusBar from "@react-native-community/status-bar";
 
 type Props = {};
+
 export default class App extends Component<Props> {
   render() {
     return (
