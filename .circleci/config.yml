@@ -1,9 +1,11 @@
 # Based off the script from the react-native-firebase project. Licenced under the Apache 2.0 licence
 # Details: https://github.com/invertase/react-native-firebase
 
+
 # -------------------------
-#          CACHE
+#          ALIASES
 # -------------------------
+aliases:
 - &restore-yarn-cache
   keys:
   - yarn-cache-{{ arch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
