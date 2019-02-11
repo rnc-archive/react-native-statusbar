@@ -10,7 +10,6 @@
 
 ### Manual installation
 
-
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -21,33 +20,35 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactnativecommunity.statusbar.RNCStatusBarPackage;` to the imports at the top of the file
-  - Add `new RNCStatusBarPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-status-bar'
-  	project(':react-native-status-bar').projectDir = new File(rootProject.projectDir, 	'../../node_modules/react-native-status-bar/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      implementation project(':react-native-status-bar')
-  	```
 
+- Add `import com.reactnativecommunity.statusbar.RNCStatusBarPackage;` to the imports at the top of the file
+- Add `new RNCStatusBarPackage()` to the list returned by the `getPackages()` method
+
+2. Append the following lines to `android/settings.gradle`:
+   ```
+   include ':react-native-status-bar'
+   project(':react-native-status-bar').projectDir = new File(rootProject.projectDir,  '../../node_modules/react-native-status-bar/android')
+   ```
+3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+   ```
+   implementation project(':react-native-status-bar')
+   ```
 
 ## Usage
+
 ```javascript
 import StatusBar from '@react-native-community/status-bar';
 
 function MyComponent() {
-	return ( 
-		<TouchableHighlight
-				style={styles.wrapper}
-				onPress={() => StatusBar.setHidden(true, "slide");} // or "fade"
-			>
-				<View style={styles.button}>
-					<Text> Hide status bar </Text>
-				</View>
-			</TouchableHighlight>
-	)
+  return (
+    <TouchableHighlight
+      style={styles.wrapper}
+      onPress={() => StatusBar.setHidden(true, "slide");} // or "fade"
+    >
+      <View style={styles.button}>
+        <Text> Hide status bar </Text>
+      </View>
+    </TouchableHighlight>
+  )
 }
 ```
