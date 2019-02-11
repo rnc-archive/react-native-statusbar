@@ -40,16 +40,14 @@ import StatusBar from '@react-native-community/status-bar';
 
 function MyComponent() {
 	return ( 
-		<>
-			<TouchableHighlight
-          style={styles.wrapper}
-          onPress={() => StatusBar.setHidden(true, "slide");} // or "fade"
-        >
-          <View style={styles.button}>
-            <Text> Hide status bar </Text>
-          </View>
-        </TouchableHighlight>
-		</>
+		<TouchableHighlight
+				style={styles.wrapper}
+				onPress={() => StatusBar.setHidden(true, "slide");} // or "fade"
+			>
+				<View style={styles.button}>
+					<Text> Hide status bar </Text>
+				</View>
+			</TouchableHighlight>
 	)
 }
 ```
