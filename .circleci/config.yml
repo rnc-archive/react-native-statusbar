@@ -41,7 +41,7 @@ aliases:
 #        DEFAULTS
 # -------------------------
 defaults: &defaults
-  working_directory: ~/react-native-netinfo
+  working_directory: ~/react-native-status-bar
   environment:
   - GIT_COMMIT_DESC: git log --format=oneline -n 1 $CIRCLE_SHA1
 
@@ -78,7 +78,7 @@ jobs:
     - attach_workspace:
         at: ~/react-native-status-bar
     - run: *flow
-  
+
   javascript:
     <<: *js_defaults
     steps:
