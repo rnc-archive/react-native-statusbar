@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/status-bar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./js/StatusBar.js",
   "scripts": {
