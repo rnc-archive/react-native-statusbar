@@ -6,6 +6,7 @@
   "scripts": {
     "test:flow": "flow",
     "test:js": "echo 'No test specified'; exit 0;",
+    "test:e2e:ios": "detox test -c ios.sim.debug",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "release": "semantic-release"
   },
@@ -26,11 +27,25 @@
     "babel-jest": "24.1.0",
     "babel-plugin-module-resolver": "^3.1.3",
     "flow-bin": "^0.86.0",
-    "jest": "24.1.0",
+    "jest": "^24.5.0",
     "metro-react-native-babel-preset": "0.51.1",
     "react": "16.6.3",
     "react-native": "0.58.4",
     "react-test-renderer": "16.6.3",
     "semantic-release": "^15.13.3"
+  },
+  "dependencies": {
+    "detox": "^11.0.1"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "example/ios/build/Build/Products/Debug-iphonesimulator/StatusBarExample.app",
+        "build": "xcodebuild -project example/ios/StatusBarExample.xcodeproj -scheme StatusBarExample -configuration Debug -sdk iphonesimulator -derivedDataPath example/ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone X"
+      }
+    }
   }
 }

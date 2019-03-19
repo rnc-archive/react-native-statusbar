@@ -18,6 +18,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <TouchableHighlight
+          testID="set-hidden-slide"
           style={styles.wrapper}
           onPress={() => {
             StatusBar.setHidden(true, "slide");
@@ -106,4 +107,4 @@ const styles = StyleSheet.create({
   modalButton: {
     marginTop: 10,
   },
-});     
+});
