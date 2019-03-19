@@ -178,7 +178,7 @@ Show or hide the status bar
 | Name      | Type                                                  | Required | Description                                                      |
 | --------- | ----------------------------------------------------- | -------- | ---------------------------------------------------------------- |
 | hidden    | boolean                                               | Yes      | Hide the status bar.                                             |
-| animation | [StatusBarAnimation](statusbar.md#statusbaranimation) | No       | Optional animation when changing the status bar hidden property. |
+| animation | [StatusBarAnimation](#statusbaranimation) | No       | Optional animation when changing the status bar hidden property. |
 
 ---
 
@@ -194,7 +194,8 @@ Set the status bar style
 
 | Name     | Type                                          | Required | Description               |
 | -------- | --------------------------------------------- | -------- | ------------------------- |
-| style    | [StatusBarStyle](statusbar.md#statusbarstyle) | Yes      | Status bar style to set   |
+| style    | [StatusBarStyle](
+#statusbarstyle) | Yes      | Status bar style to set   |
 | animated | boolean                                       | No       | Animate the style change. |
 
 ---
