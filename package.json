@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/status-bar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Native module for mutating status bar state",
   "main": "./js/StatusBar.js",
   "scripts": {
