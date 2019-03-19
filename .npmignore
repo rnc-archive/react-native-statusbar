@@ -23,6 +23,7 @@ jsconfig.json
 .opensource
 .circleci
 .eslintignore
+.env
 codecov.yml
 
 # Example

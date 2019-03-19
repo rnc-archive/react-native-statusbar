@@ -1,3 +1,9 @@
+# 1.0.2 (2019-03-13)
+
+### Fixes
+
+* Fix missing react peer dependency
+
 # 1.0.1 (2019-03-13)
 
 ### Features
