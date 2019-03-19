@@ -1,7 +1,7 @@
 {
   "name": "@react-native-community/status-bar",
   "version": "1.0.1",
-  "description": "",
+  "description": "Native module for mutating status bar state",
   "main": "./js/StatusBar.js",
   "scripts": {
     "test:flow": "flow",
@@ -10,12 +10,15 @@
     "release": "semantic-release"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "status-bar",
+    "react-native-community"
   ],
   "author": "Dmitriy Kovalenko <dmtr.kovalenko@outlook.com>",
+  "homepage": "https://github.com/react-native-community/react-native-statusbar",
   "license": "MIT",
   "peerDependencies": {
-    "react": "*",
+    "react": "^16.0",
     "react-native": ">=0.41.2"
   },
   "devDependencies": {
