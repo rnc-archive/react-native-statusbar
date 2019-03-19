@@ -131,7 +131,7 @@ The background color of the status bar.
 
 | Type               | Required | Platform |
 | ------------------ | -------- | -------- |
-| [color](colors.md) | No       | Android  |
+| [color](https://facebook.github.io/react-native/docs/colors) | No       | Android  |
 
 ---
 
@@ -228,7 +228,7 @@ Set the background color for the status bar
 
 | Name     | Type    | Required | Description               |
 | -------- | ------- | -------- | ------------------------- |
-| color    | string  | Yes      | Background color.         |
+| color    | [color](https://facebook.github.io/react-native/docs/colors)  | Yes      | Background color.         |
 | animated | boolean | No       | Animate the style change. |
 
 ---
