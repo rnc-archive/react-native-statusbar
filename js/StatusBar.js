@@ -10,11 +10,10 @@
 
 'use strict';
 
-const React = require('React');
-const Platform = require('Platform');
+import React from 'react'
+import { Platform, NativeModules, processColor } from 'react-native'
 
-const processColor = require('processColor');
-const StatusBarManager = require('NativeModules').RNCStatusBarManager;
+const StatusBarManager = NativeModules.RNCStatusBarManager;
 
 /**
  * Status bar style
