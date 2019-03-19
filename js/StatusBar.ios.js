@@ -11,8 +11,7 @@
 
 'use strict';
 
-const NativeEventEmitter = require('NativeEventEmitter');
-const Modules = require('NativeModules');
+import { NativeEventEmitter, NativeModules as Modules } from 'react-native'
 
 /**
  * Use `StatusBar` for mutating the status bar.

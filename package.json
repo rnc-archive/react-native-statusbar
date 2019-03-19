@@ -15,7 +15,8 @@
   "author": "Dmitriy Kovalenko <dmtr.kovalenko@outlook.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react": "*",
+    "react-native": ">=0.41.2"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",

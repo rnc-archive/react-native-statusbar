@@ -10,7 +10,7 @@
 
 'use strict';
 
-const NativeEventEmitter = require('NativeEventEmitter');
+import { NativeEventEmitter } from 'react-native'
 
 /* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was found when
  * making Flow check .android.js files. */
