@@ -439,7 +439,7 @@ jobs:
 
       - run: mkdir ~/detox-artifacts
 
-      # 🚀 Run Tests
+      # Run Tests ಠ_ಠ
       - run:
           name: Run Detox Tests
           command: yarn run test:e2e:ios
