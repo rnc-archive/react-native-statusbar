@@ -45,3 +45,4 @@ buck-out/
 
 
 .env
+.tmp

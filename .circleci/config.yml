@@ -329,6 +329,10 @@ jobs:
       - run: *make-cache-check-files
 
       - run:
+        name: Checkout .tmp folder
+        command: ls .tmp
+
+      - run:
           name: Configure Environment Variables
           command: |
             echo 'export PATH="$PATH:/usr/local/opt/node@8/bin:~/.yarn/bin:~/react-native-status-bar/node_modules/.bin:~/react-native-status-bar/example/node_modules/.bin"' >> $BASH_ENV
