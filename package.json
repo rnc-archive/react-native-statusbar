@@ -8,6 +8,8 @@
     "test:typescript": "tsc ./index.d.ts",
     "lint": "npx eslint ./js/**/*.js example/**/*.js",
     "test:js": "echo 'No test specified'; exit 0;",
+    "test:e2e:ios": "detox test -c ios.sim.release",
+    "test:e2e:android": "detox test -c android.emu.release",
     "build:e2e:ios": "detox build -c ios.sim.release",
     "build:e2e:android": "detox build -c android.emu.release",
     "bundle:e2e:android": "mkdir -p .tmp && react-native bundle --max-workers 4 --platform android --dev false --entry-file example/index.js --bundle-output .tmp/android-bundle.js",
