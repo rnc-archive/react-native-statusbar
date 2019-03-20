@@ -1,5 +1,3 @@
-// CREDITS: This types are based on the original work made by all the people who contributed to @types/react-native
-
 declare module "@react-native-community/status-bar" {
   import React from 'react';
 
