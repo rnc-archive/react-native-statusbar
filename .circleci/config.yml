@@ -188,7 +188,7 @@ js_defaults: &js_defaults
     - image: circleci/node:8
   environment:
     - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
+ b
 # ANDROID
 android_defaults: &android_defaults
   <<: *defaults
@@ -407,10 +407,6 @@ jobs:
       - run: *make-cache-check-files
 
       - run:
-          name: Checkout .tmp folder
-          command: ls .tmp
-
-      - run:
           name: Start iPhone X simulator (background)
           background: true
           command: xcrun simctl boot "iPhone X" || true
@@ -430,6 +426,10 @@ jobs:
       - run: *yarn
       - save-cache: *save-yarn-cache
 
+      # Copy
+      - run:
+        command: cp .tmp/ios-bundle.js example/ios/build/Build/Products/Release-iphonesimulator/StatusBarExample.app/main.jsbundle
+
       # XCode Build
       - restore-cache: *restore-ios-build-cache
       - run:
@@ -439,7 +439,7 @@ jobs:
 
       - run: mkdir ~/detox-artifacts
 
-      # Now Test \o/
+      # 🚀 Run Tests
       - run:
           name: Run Detox Tests
           command: yarn run test:e2e:ios

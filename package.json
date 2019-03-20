@@ -50,7 +50,7 @@
     "configurations": {
       "ios.sim.debug": {
         "binaryPath": "example/ios/build/Build/Products/Debug-iphonesimulator/StatusBarExample.app",
-        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/StatusBarExample.xcodeproj -destination 'platform=iOS Simulator,name=iPhone X' -scheme StatusBarExample -parallelizeTargets -configuration Debug -derivedDataPath example/ios/build  -UseModernBuildSystem=YES | xcpretty -k",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/StatusBarExample.xcodeproj -destination 'platform=iOS Simulator,name=iPhone X' -scheme StatusBarExample -parallelizeTargets -configuration Debug -derivedDataPath example/ios/build  -UseModernBuildSystem=YES| xcpretty -k",
         "type": "ios.simulator",
         "name": "iPhone X"
       },
