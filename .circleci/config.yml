@@ -188,7 +188,7 @@ js_defaults: &js_defaults
     - image: circleci/node:8
   environment:
     - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
- b
+
 # ANDROID
 android_defaults: &android_defaults
   <<: *defaults
