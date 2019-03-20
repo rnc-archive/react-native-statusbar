@@ -10,8 +10,8 @@
 
 'use strict';
 
-import * as React from 'react'
-import { Platform, NativeModules, processColor } from 'react-native'
+import * as React from 'react';
+import {Platform, NativeModules, processColor} from 'react-native';
 
 const StatusBarManager = NativeModules.RNCStatusBarManager;
 

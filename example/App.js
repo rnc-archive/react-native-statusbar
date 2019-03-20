@@ -7,9 +7,9 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, TouchableHighlight } from "react-native";
-import StatusBar from "@react-native-community/status-bar";
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, TouchableHighlight} from 'react-native';
+import StatusBar from '@react-native-community/status-bar';
 
 type Props = {};
 
@@ -21,9 +21,8 @@ export default class App extends Component<Props> {
           testID="set-hidden-slide"
           style={styles.wrapper}
           onPress={() => {
-            StatusBar.setHidden(true, "slide");
-          }}
-        >
+            StatusBar.setHidden(true, 'slide');
+          }}>
           <View style={styles.button}>
             <Text>setHidden(true, 'slide')</Text>
           </View>
@@ -31,9 +30,8 @@ export default class App extends Component<Props> {
         <TouchableHighlight
           style={styles.wrapper}
           onPress={() => {
-            StatusBar.setHidden(false, "fade");
-          }}
-        >
+            StatusBar.setHidden(false, 'fade');
+          }}>
           <View style={styles.button}>
             <Text>setHidden(false, 'fade')</Text>
           </View>
@@ -41,9 +39,8 @@ export default class App extends Component<Props> {
         <TouchableHighlight
           style={styles.wrapper}
           onPress={() => {
-            StatusBar.setBarStyle("default", true);
-          }}
-        >
+            StatusBar.setBarStyle('default', true);
+          }}>
           <View style={styles.button}>
             <Text>setBarStyle('default', true)</Text>
           </View>
@@ -51,9 +48,8 @@ export default class App extends Component<Props> {
         <TouchableHighlight
           style={styles.wrapper}
           onPress={() => {
-            StatusBar.setBarStyle("light-content", true);
-          }}
-        >
+            StatusBar.setBarStyle('light-content', true);
+          }}>
           <View style={styles.button}>
             <Text>setBarStyle('light-content', true)</Text>
           </View>
@@ -62,8 +58,7 @@ export default class App extends Component<Props> {
           style={styles.wrapper}
           onPress={() => {
             StatusBar.setNetworkActivityIndicatorVisible(true);
-          }}
-        >
+          }}>
           <View style={styles.button}>
             <Text>setNetworkActivityIndicatorVisible(true)</Text>
           </View>
@@ -72,8 +67,7 @@ export default class App extends Component<Props> {
           style={styles.wrapper}
           onPress={() => {
             StatusBar.setNetworkActivityIndicatorVisible(false);
-          }}
-        >
+          }}>
           <View style={styles.button}>
             <Text>setNetworkActivityIndicatorVisible(false)</Text>
           </View>

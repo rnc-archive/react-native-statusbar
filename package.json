@@ -6,6 +6,7 @@
   "scripts": {
     "test:flow": "flow",
     "test:typescript": "tsc ./index.d.ts",
+    "lint": "npx eslint ./js/**/*.js example/**/*.js",
     "test:js": "echo 'No test specified'; exit 0;",
     "build:e2e:ios": "detox build -c ios.sim.release",
     "build:e2e:android": "detox build -c android.emu.release",
@@ -27,10 +28,12 @@
     "react-native": ">=0.41.2"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "24.1.0",
     "babel-plugin-module-resolver": "^3.1.3",
     "detox": "^11.0.1",
+    "eslint": "^5.15.3",
     "flow-bin": "^0.86.0",
     "jest": "^24.5.0",
     "metro-react-native-babel-preset": "0.51.1",
