@@ -426,10 +426,8 @@ jobs:
       - run: *yarn
       - save-cache: *save-yarn-cache
 
-      # Copy
-      - run:
-        name: Copy saved ios bundle to the build folder
-        command: cp .tmp/ios-bundle.js example/ios/build/Build/Products/Release-iphonesimulator/StatusBarExample.app/main.jsbundle
+      # Copy saved ios bundle to the build folder
+      - run: cp .tmp/ios-bundle.js example/ios/build/Build/Products/Release-iphonesimulator/StatusBarExample.app/main.jsbundle
 
       # XCode Build
       - restore-cache: *restore-ios-build-cache
