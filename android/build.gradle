@@ -1,6 +1,7 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
     }
 
@@ -27,10 +28,11 @@ android {
 }
 
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
 }
-  
+
