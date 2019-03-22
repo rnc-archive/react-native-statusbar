@@ -328,6 +328,8 @@ jobs:
           at: ~/react-native-status-bar
       - run: *make-cache-check-files
 
+      - run: 'ls /example/android/app/build/outputs/apk/'
+
       - run:
           name: Configure Environment Variables
           command: |
