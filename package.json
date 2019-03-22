@@ -14,7 +14,7 @@
     "build:e2e:android": "detox build -c android.emu.release",
     "bundle:e2e:android": "mkdir -p .tmp && react-native bundle --max-workers 4 --platform android --dev false --entry-file example/index.js --bundle-output .tmp/android-bundle.js",
     "bundle:e2e:ios": "mkdir -p .tmp && react-native bundle --max-workers 4 --platform ios --dev false --entry-file example/index.js --bundle-output .tmp/ios-bundle.js",
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native start",
     "release": "semantic-release"
   },
   "keywords": [
