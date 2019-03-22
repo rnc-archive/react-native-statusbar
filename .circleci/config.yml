@@ -309,6 +309,8 @@ jobs:
           name: Build Android Release APK
           command: cd example/android && chmod +x gradlew && ./gradlew --build-cache --max-workers 2 --continue assembleRelease assembleAndroidTest -DtestBuildType=release
 
+      - run: 'ls /example/android/app/build/outputs/apk/'
+
       - run: *collect-gradle-build-caches
       - save-cache: *save-gradle-release-build-cache
 
@@ -327,8 +329,6 @@ jobs:
       - attach_workspace:
           at: ~/react-native-status-bar
       - run: *make-cache-check-files
-
-      - run: 'ls /example/android/app/build/outputs/apk/'
 
       - run:
           name: Configure Environment Variables
