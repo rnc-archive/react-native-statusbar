@@ -54,7 +54,7 @@ workflows:
             - analyse
       - rn/android_test:
           detox_configuration: "android.emu.release"
-          logcat_grep: "com."
+          logcat_grep: "com.statusbarexample"
           requires:
             - build_android_release
       - rn/ios_build_and_test:
