@@ -18,7 +18,7 @@ jobs:
         at: .
       - rn/setup_macos_executor
       - rn/yarn_install
-      - rn/android_emulator_start:
+      - rn/android_emulator_start
 
       - run:
         name: Build and install android release apk
