@@ -11,23 +11,6 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-
-  android_e2e:
-    executor: rn/macos
-    steps:
-      - attach_workspace:
-          at: .
-      - rn/setup_macos_executor
-      - rn/yarn_install
-      - rn/android_emulator_start
-
-      - run:
-          name: Build and install android release apk
-          command: yarn build:e2e:android
-      - run:
-          name: Run detox tests
-          command: yarn test:e2e:android
-
   analyse:
     executor: rn/linux_js
     steps:
@@ -67,15 +50,17 @@ workflows:
       #     build_type: debug
       #     requires:
       #       - analyse
-      # - rn/android_build:
-      #     name: build_android_release
-      #     project_path: "example/android"
-      #     build_type: release
-      #     requires:
-      #       - analyse
-      - android_e2e:
+      - rn/android_build:
+          name: build_android_release
+          project_path: "example/android"
+          build_type: release
           requires:
             - analyse
+      - rn/android_test:
+          logcat_grep: "com.statusbarexample"
+          detox_configuration: "android.emu.release"
+          requires:
+            - build_android_release
       # - rn/ios_build_and_test:
       #     project_path: "example/ios/StatusBarExample.xcodeproj"
       #     derived_data_path: "example/ios/build"

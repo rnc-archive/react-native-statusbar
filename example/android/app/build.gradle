@@ -74,7 +74,9 @@ import com.android.build.OutputFile
 
 project.ext.react = [
     entryFile: "example/index.js",
+    nodeExecutableAndArgs: ["echo", "'Skipping bundling"],
     root: "../../../",
+    bundleInRelease: false
 ]
 
 apply from: "../../../node_modules/react-native/react.gradle"
@@ -104,7 +106,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testBuildType System.getProperty('testBuildType', 'debug')  //this will later be used to control the test apk build type
+        testBuildType System.getProperty('testBuildType', 'debug')
+        missingDimensionStrategy "minReactNative", "minReactNative46"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
