@@ -13,6 +13,7 @@ jobs:
           paths: .
 
   android_e2e:
+    executor: macos
     steps:
       - attach_workspace:
         at: .
