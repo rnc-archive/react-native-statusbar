@@ -11,17 +11,14 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
+
   android_e2e:
     steps:
       - attach_workspace:
         at: .
-      - setup_macos_executor
-      - yarn_install
-      - android_emulator_start:
-        device_name: "TestingAVD"
-        platform_version: "android-28"
-        build_tools_version: "28.0.3"
-        logcat_grep: "com.statusbarexample"
+      - rn/setup_macos_executor
+      - rn/yarn_install
+      - rn/android_emulator_start:
 
       - run:
         name: Build and install android release apk
