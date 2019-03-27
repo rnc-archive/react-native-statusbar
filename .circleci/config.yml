@@ -23,7 +23,7 @@ jobs:
 
       - run:
           name: Build and install android release apk
-          command: cd example && npx react-native run-android --variant release
+          command: yarn build:e2e:android
       - run:
           name: Run detox tests
           command: yarn test:e2e:android
@@ -61,27 +61,27 @@ workflows:
       - analyse:
           requires:
             - checkout_code
-      - rn/android_build:
-          name: build_android_debug
-          project_path: "example/android"
-          build_type: debug
-          requires:
-            - analyse
-      - rn/android_build:
-          name: build_android_release
-          project_path: "example/android"
-          build_type: release
-          requires:
-            - analyse
+      # - rn/android_build:
+      #     name: build_android_debug
+      #     project_path: "example/android"
+      #     build_type: debug
+      #     requires:
+      #       - analyse
+      # - rn/android_build:
+      #     name: build_android_release
+      #     project_path: "example/android"
+      #     build_type: release
+      #     requires:
+      #       - analyse
       - android_e2e:
           requires:
             - analyse
-      - rn/ios_build_and_test:
-          project_path: "example/ios/StatusBarExample.xcodeproj"
-          derived_data_path: "example/ios/build"
-          device: "iPhone X"
-          build_configuration: "Release"
-          scheme: "StatusBarExample"
-          detox_configuration: "ios.sim.release"
-          requires:
-            - analyse
+      # - rn/ios_build_and_test:
+      #     project_path: "example/ios/StatusBarExample.xcodeproj"
+      #     derived_data_path: "example/ios/build"
+      #     device: "iPhone X"
+      #     build_configuration: "Release"
+      #     scheme: "StatusBarExample"
+      #     detox_configuration: "ios.sim.release"
+      #     requires:
+      #       - analyse
