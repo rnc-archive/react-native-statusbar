@@ -3,7 +3,7 @@ import detox from 'detox';
 import adapter from 'detox/runners/jest/adapter';
 import { detox as config } from '../package.json';
 
-jest.setTimeout(300000);
+jest.setTimeout(600000);
 // $FlowFixMe
 jasmine.getEnv().addReporter(adapter);
 
