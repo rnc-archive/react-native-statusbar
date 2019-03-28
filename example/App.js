@@ -20,7 +20,7 @@ type MutationBtnProps = {
 const MutationBtn = ({label, onPress, testID}: MutationBtnProps) => {
   return (
     <TouchableHighlight
-      testID="set-hidden-slide"
+      testID={testID}
       style={styles.wrapper}
       onPress={onPress}>
       <View style={styles.button}>
@@ -45,15 +45,15 @@ const App = () => (
     />
 
     <MutationBtn
-      testID="set-default-style"
-      label="setBarStyle('default', true)"
-      onPress={() => StatusBar.setBarStyle('default', true)}
-    />
-
-    <MutationBtn
       testID="set-light-style"
       label="setBarStyle('light-content', true)"
       onPress={() => StatusBar.setBarStyle('light-content', true)}
+    />
+
+    <MutationBtn
+      testID="set-default-style"
+      label="setBarStyle('default', true)"
+      onPress={() => StatusBar.setBarStyle('default', true)}
     />
 
     <MutationBtn
