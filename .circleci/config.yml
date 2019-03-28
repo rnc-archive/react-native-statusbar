@@ -11,7 +11,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-  analyse:
+  javascript:
     executor: rn/linux_js
     steps:
       - attach_workspace:
@@ -41,7 +41,7 @@ workflows:
   test:
     jobs:
       - checkout_code
-      - analyse:
+      - javascript:
           requires:
             - checkout_code
       - rn/android_build:
@@ -49,13 +49,13 @@ workflows:
           project_path: "example/android"
           build_type: debug
           requires:
-            - analyse
+            - javascript
       - rn/android_build:
           name: android_release_build
           project_path: "example/android"
           build_type: release
           requires:
-            - analyse
+            - javascript
       - rn/android_test:
           logcat_grep: "com.statusbarexample"
           detox_configuration: "android.emu.release"
@@ -69,4 +69,4 @@ workflows:
           scheme: "StatusBarExample"
           detox_configuration: "ios.sim.release"
           requires:
-            - analyse
+            - javascript
