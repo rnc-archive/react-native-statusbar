@@ -6,7 +6,7 @@
   "scripts": {
     "test:flow": "flow",
     "test:typescript": "tsc ./index.d.ts",
-    "lint": "npx eslint ./js/**/*.js example/**/*.js",
+    "lint": "npx eslint ./js/**/*.js example/**/*.js e2e/**/*.js",
     "test:js": "echo 'No test specified'; exit 0;",
     "test:e2e:ios": "detox test -c ios.sim.release",
     "test:e2e:android": "detox test -c android.emu.release",
@@ -34,7 +34,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "24.1.0",
     "babel-plugin-module-resolver": "^3.1.3",
-    "detox": "^11.0.1",
+    "detox": "^12.1.1",
     "eslint": "^5.15.3",
     "flow-bin": "^0.86.0",
     "jest": "^24.5.0",

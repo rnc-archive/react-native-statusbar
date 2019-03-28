@@ -18,7 +18,7 @@ jobs:
           at: .
       - rn/yarn_install
       - run:
-          name: Lint JS Code (ESLint)
+          name: Eslint
           command: yarn run lint
       - run:
           name: Flow
@@ -27,10 +27,10 @@ jobs:
           name: TypeScript
           command: yarn run test:typescript
       - run:
-          name: Build Android JavaScript Bundle
+          name: Android JavaScript Bundle
           command: yarn run bundle:e2e:android
       - run:
-          name: Build iOS JavaScript Bundle
+          name: iOS JavaScript Bundle
           command: yarn run bundle:e2e:ios
       - persist_to_workspace:
           root: .
