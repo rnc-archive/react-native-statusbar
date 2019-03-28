@@ -45,6 +45,14 @@
     "semantic-release": "^15.13.3",
     "typescript": "^3.3.4000"
   },
+  "prettier": {
+    "requirePragma": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow"
+  },
   "detox": {
     "test-runner": "jest",
     "configurations": {
