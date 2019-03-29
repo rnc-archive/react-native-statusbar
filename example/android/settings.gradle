@@ -3,4 +3,7 @@ rootProject.name = 'StatusBarExample'
 include(':react-native-status-bar')
 project(':react-native-status-bar').projectDir = new File(rootProject.projectDir, '../../android')
 
+include ':detox'
+project(':detox').projectDir = new File(rootProject.projectDir, '../../node_modules/detox/android/detox')
+
 include ':app'

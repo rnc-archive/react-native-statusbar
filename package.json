@@ -5,8 +5,16 @@
   "main": "./js/StatusBar.js",
   "scripts": {
     "test:flow": "flow",
+    "test:typescript": "tsc ./index.d.ts",
+    "lint": "npx eslint ./js/**/*.js example/**/*.js e2e/**/*.js",
     "test:js": "echo 'No test specified'; exit 0;",
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test:e2e:ios": "detox test -c ios.sim.release",
+    "test:e2e:android": "detox test -c android.emu.release",
+    "build:e2e:ios": "detox build -c ios.sim.release",
+    "build:e2e:android": "detox build -c android.emu.release",
+    "bundle:e2e:android": "mkdir -p .tmp && react-native bundle --max-workers 4 --platform android --dev false --entry-file example/index.js --bundle-output .tmp/android-bundle.js",
+    "bundle:e2e:ios": "mkdir -p .tmp && react-native bundle --max-workers 4 --platform ios --dev false --entry-file example/index.js --bundle-output .tmp/ios-bundle.js",
+    "start": "react-native start",
     "release": "semantic-release"
   },
   "keywords": [
@@ -22,15 +30,56 @@
     "react-native": ">=0.41.2"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "24.1.0",
     "babel-plugin-module-resolver": "^3.1.3",
+    "detox": "^12.1.1",
+    "eslint": "^5.15.3",
     "flow-bin": "^0.86.0",
-    "jest": "24.1.0",
+    "jest": "^24.5.0",
     "metro-react-native-babel-preset": "0.51.1",
     "react": "16.6.3",
     "react-native": "0.58.4",
     "react-test-renderer": "16.6.3",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.3",
+    "typescript": "^3.3.4000"
+  },
+  "prettier": {
+    "requirePragma": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "example/ios/build/Build/Products/Debug-iphonesimulator/StatusBarExample.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/StatusBarExample.xcodeproj -destination 'platform=iOS Simulator,name=iPhone X' -scheme StatusBarExample -parallelizeTargets -configuration Debug -derivedDataPath example/ios/build  -UseModernBuildSystem=YES| xcpretty -k",
+        "type": "ios.simulator",
+        "name": "iPhone X"
+      },
+      "ios.sim.release": {
+        "binaryPath": "example/ios/build/Build/Products/Release-iphonesimulator/StatusBarExample.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/StatusBarExample.xcodeproj -destination 'platform=iOS Simulator,name=iPhone X' -scheme StatusBarExample -parallelizeTargets -configuration Release -derivedDataPath example/ios/build  -UseModernBuildSystem=YES | xcpretty -k",
+        "type": "ios.simulator",
+        "name": "iPhone X"
+      },
+      "android.emu.debug": {
+        "binaryPath": "example/android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && pushd example/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "TestingAVD"
+      },
+      "android.emu.release": {
+        "binaryPath": "example/android/app/build/outputs/apk/release/app-release.apk",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && pushd example/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "type": "android.emulator",
+        "name": "TestingAVD"
+      }
+    }
   }
 }
