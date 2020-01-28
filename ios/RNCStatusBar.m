@@ -105,25 +105,13 @@ RCT_EXPORT_METHOD(getHeight:(RCTResponseSenderBlock)callback)
 RCT_EXPORT_METHOD(setStyle:(UIStatusBarStyle)statusBarStyle
                   animated:(BOOL)animated)
 {
-  if (RCTViewControllerBasedStatusBarAppearance()) {
-    RCTLogError(@"RCTStatusBarManager module requires that the \
-                UIViewControllerBasedStatusBarAppearance key in the Info.plist is set to NO");
-  } else {
-    [RCTSharedApplication() setStatusBarStyle:statusBarStyle
-                                     animated:animated];
-  }
+  [RCTSharedApplication() setStatusBarStyle:statusBarStyle animated:animated];
 }
 
 RCT_EXPORT_METHOD(setHidden:(BOOL)hidden
                   withAnimation:(UIStatusBarAnimation)animation)
 {
-  if (RCTViewControllerBasedStatusBarAppearance()) {
-    RCTLogError(@"RCTStatusBarManager module requires that the \
-                UIViewControllerBasedStatusBarAppearance key in the Info.plist is set to NO");
-  } else {
-    [RCTSharedApplication() setStatusBarHidden:hidden
-                                 withAnimation:animation];
-  }
+  [RCTSharedApplication() setStatusBarHidden:hidden withAnimation:animation];
 }
 
 RCT_EXPORT_METHOD(setNetworkActivityIndicatorVisible:(BOOL)visible)
