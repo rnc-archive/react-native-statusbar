@@ -6,7 +6,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # Development is on hold
-This project is not acteivly supported because of [this issue](https://github.com/react-native-community/react-native-statusbar/issues/28). (Current state of events is that the StatusBar stays in the core for now. We're not sure for how long though.(
+This project is not actively supported because of [this issue](https://github.com/react-native-community/react-native-statusbar/issues/28). (Current state of events is that the StatusBar stays in the core for now. We're not sure for how long though.)
 
 ## Getting started
 
