@@ -14,6 +14,10 @@ This project is not actively supported because of [this issue](https://github.co
 
 ### Mostly automatic installation
 
+From react-native >= 0.60, autolinking will link this automatically, just run pod install for iOS.
+
+react-native < 0.60
+
 `$ react-native link @react-native-community/status-bar`
 
 ### Manual installation
